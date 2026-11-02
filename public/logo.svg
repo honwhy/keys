@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 180" width="720" height="180" role="img" aria-labelledby="title desc">
+  <title id="title">KeyTune · 键音</title>
+  <desc id="desc">KeyTune logo: a neon piano mark and the KeyTune wordmark on a dark rounded panel.</desc>
+  <defs>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#10162A"/>
+      <stop offset="0.55" stop-color="#0B0E17"/>
+      <stop offset="1" stop-color="#071018"/>
+    </linearGradient>
+    <linearGradient id="mark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7FF8EC"/>
+      <stop offset="0.55" stop-color="#35E0D0"/>
+      <stop offset="1" stop-color="#169B92"/>
+    </linearGradient>
+    <linearGradient id="wordmark" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#35E0D0"/>
+      <stop offset="0.55" stop-color="#9EEEE7"/>
+      <stop offset="1" stop-color="#FF8A8A"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.78" cy="0.12" r="0.65">
+      <stop offset="0" stop-color="#35E0D0" stop-opacity="0.20"/>
+      <stop offset="1" stop-color="#35E0D0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowCoral" cx="0.08" cy="1" r="0.55">
+      <stop offset="0" stop-color="#FF6B6B" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#FF6B6B" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect x="0.5" y="0.5" width="719" height="179" rx="28" fill="url(#panel)" stroke="#202A44"/>
+  <rect x="0.5" y="0.5" width="719" height="179" rx="28" fill="url(#glow)"/>
+  <rect x="0.5" y="0.5" width="719" height="179" rx="28" fill="url(#glowCoral)"/>
+
+  <!-- piano mark -->
+  <rect x="32" y="42" width="96" height="96" rx="24" fill="url(#mark)"/>
+  <rect x="47" y="69" width="66" height="45" rx="6" fill="#F7F9FF"/>
+  <rect x="54" y="69" width="9" height="28" rx="2.5" fill="#0B0E17"/>
+  <rect x="70" y="69" width="9" height="28" rx="2.5" fill="#0B0E17"/>
+  <rect x="95" y="69" width="9" height="28" rx="2.5" fill="#0B0E17"/>
+  <rect x="47" y="100" width="66" height="14" rx="0" fill="#DCE6F7" opacity="0.82"/>
+  <path d="M88 48c8-7 16-9 24-7v12c-8-2-14 1-18 7v12h-6z" fill="#F7F9FF" opacity="0.96"/>
+  <circle cx="80" cy="72" r="5" fill="#F7F9FF" opacity="0.96"/>
+
+  <!-- wordmark -->
+  <text x="158" y="92" font-family="Arial, 'Helvetica Neue', 'PingFang SC', sans-serif" font-size="64" font-weight="700" letter-spacing="-1.5" fill="url(#wordmark)">KeyTune</text>
+  <text x="162" y="124" font-family="'PingFang SC', 'Microsoft YaHei', Arial, sans-serif" font-size="18" font-weight="500" letter-spacing="2.4" fill="#8A93B2">键音 · PLAY BY KEYS</text>
+
+  <!-- right badge -->
+  <g transform="translate(548 48)">
+    <rect width="132" height="34" rx="17" fill="#35E0D0" fill-opacity="0.08" stroke="#35E0D0" stroke-opacity="0.35"/>
+    <text x="66" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="2" fill="#8FFFF3">15 KEYS</text>
+  </g>
+  <text x="548" y="116" font-family="Arial, sans-serif" font-size="10" letter-spacing="1.8" fill="#66718F">PLAY · LEARN · RECORD</text>
+</svg>

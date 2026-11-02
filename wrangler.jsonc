@@ -1,0 +1,14 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "keytune",
+  "main": "./worker/index.ts",
+  "compatibility_date": "2026-11-02",
+  "upload_source_maps": true,
+  "assets": {
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application"
+  },
+  "observability": {
+    "enabled": true
+  }
+}

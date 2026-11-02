@@ -1,0 +1,141 @@
+{
+  "project": "KeyTune",
+  "version": 1,
+  "updated": "2026-11-02",
+  "pathBase": "/",
+  "images": {
+    "appIcon": {
+      "id": "M-IMG-01",
+      "path": "images/brand/app-icon-1024.png",
+      "format": "png",
+      "size": [
+        1024,
+        1024
+      ],
+      "variants": {
+        "512": "images/brand/app-icon-512.png",
+        "192": "images/brand/app-icon-192.png",
+        "180": "images/brand/app-icon-180.png",
+        "167": "images/brand/app-icon-167.png",
+        "152": "images/brand/app-icon-152.png",
+        "120": "images/brand/app-icon-120.png"
+      }
+    },
+    "logo": {
+      "id": "M-IMG-02",
+      "svg": "images/brand/logo-keytune.svg",
+      "dark": "images/brand/logo-keytune-dark.png",
+      "light": "images/brand/logo-keytune-light.png",
+      "size": [
+        1280,
+        320
+      ]
+    },
+    "backgrounds": {
+      "id": "M-IMG-03",
+      "proMax": {
+        "path": "images/backgrounds/bg-main-2868x1320.webp",
+        "size": [
+          2868,
+          1320
+        ]
+      },
+      "pro": {
+        "path": "images/backgrounds/bg-main-2622x1206.webp",
+        "size": [
+          2622,
+          1206
+        ]
+      },
+      "desktop": {
+        "path": "images/backgrounds/bg-main-1920x1080.webp",
+        "size": [
+          1920,
+          1080
+        ]
+      }
+    },
+    "covers": {
+      "twinkle": {
+        "id": "M-IMG-04",
+        "title": "小星星",
+        "512": "images/covers/cover-twinkle-512.webp",
+        "1024": "images/covers/cover-twinkle-1024.webp"
+      },
+      "twoTigers": {
+        "id": "M-IMG-05",
+        "title": "两只老虎",
+        "512": "images/covers/cover-two-tigers-512.webp",
+        "1024": "images/covers/cover-two-tigers-1024.webp"
+      },
+      "odeToJoy": {
+        "id": "M-IMG-06",
+        "title": "欢乐颂",
+        "512": "images/covers/cover-ode-to-joy-512.webp",
+        "1024": "images/covers/cover-ode-to-joy-1024.webp"
+      },
+      "birthday": {
+        "id": "M-IMG-07",
+        "title": "生日快乐",
+        "512": "images/covers/cover-birthday-512.webp",
+        "1024": "images/covers/cover-birthday-1024.webp"
+      },
+      "jingleBells": {
+        "id": "M-IMG-08",
+        "title": "铃儿响叮当",
+        "512": "images/covers/cover-jingle-bells-512.webp",
+        "1024": "images/covers/cover-jingle-bells-1024.webp"
+      },
+      "cdeEtude": {
+        "id": "M-IMG-09",
+        "title": "C-D-E 练习曲",
+        "512": "images/covers/cover-cde-etude-512.webp",
+        "1024": "images/covers/cover-cde-etude-1024.webp"
+      }
+    }
+  },
+  "audio": {
+    "uiTap": {
+      "id": "M-SFX-01",
+      "path": "audio/sfx/sfx_ui_tap_v1.wav",
+      "durationMs": 60,
+      "loop": false
+    },
+    "judgePerfect": {
+      "id": "M-SFX-02",
+      "path": "audio/sfx/sfx_judge_perfect_v1.wav",
+      "durationMs": 150,
+      "loop": false
+    },
+    "judgeGreat": {
+      "id": "M-SFX-03",
+      "path": "audio/sfx/sfx_judge_great_v1.wav",
+      "durationMs": 130,
+      "loop": false
+    },
+    "judgeGood": {
+      "id": "M-SFX-04",
+      "path": "audio/sfx/sfx_judge_good_v1.wav",
+      "durationMs": 120,
+      "loop": false
+    },
+    "judgeMiss": {
+      "id": "M-SFX-05",
+      "path": "audio/sfx/sfx_judge_miss_v1.wav",
+      "durationMs": 200,
+      "loop": false
+    },
+    "combo50": {
+      "id": "M-SFX-06",
+      "path": "audio/sfx/sfx_combo_50_v1.wav",
+      "durationMs": 800,
+      "loop": false
+    },
+    "resultComplete": {
+      "id": "M-SFX-07",
+      "path": "audio/sfx/sfx_result_complete_v1.wav",
+      "durationMs": 1500,
+      "loop": false
+    }
+  }
+}

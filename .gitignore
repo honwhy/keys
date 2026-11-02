@@ -1,0 +1,42 @@
+# dependencies
+node_modules/
+.pnpm-store/
+
+# build output
+dist/
+.wrangler/
+
+# local env / secrets
+.dev.vars
+.dev.vars.*
+.env
+.env.*
+*.local
+
+# tooling caches
+.vite/
+.cache/
+*.tsbuildinfo
+
+# test output
+playwright-report/
+test-results/
+coverage/
+
+# logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# editors / OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# archives / temp
+*.zip
+tmp/

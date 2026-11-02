@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="160" viewBox="0 0 640 160">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#35E0D0"/>
+      <stop offset="100%" stop-color="#FF6B6B"/>
+    </linearGradient>
+  </defs>
+  <!-- KeyTune wordmark -->
+  <text x="20" y="78" font-family="SF Pro Display, Helvetica Neue, Arial, sans-serif" 
+        font-size="64" font-weight="700" fill="url(#g)">KeyTune</text>
+  <!-- Subtitle -->
+  <text x="24" y="118" font-family="PingFang SC, SF Pro Display, sans-serif" 
+        font-size="22" font-weight="500" fill="#8A93B2">键音 · Play by Keys</text>
+  <!-- Small key accent -->
+  <rect x="520" y="40" width="18" height="70" rx="3" fill="#F7F9FF"/>
+  <rect x="542" y="40" width="18" height="70" rx="3" fill="#F7F9FF"/>
+  <rect x="564" y="40" width="18" height="70" rx="3" fill="#F7F9FF"/>
+  <rect x="529" y="40" width="12" height="42" rx="2" fill="#1A1F2E"/>
+  <rect x="551" y="40" width="12" height="42" rx="2" fill="#1A1F2E"/>
+</svg>
