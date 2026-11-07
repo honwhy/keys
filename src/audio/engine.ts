@@ -32,8 +32,13 @@ function noteFrequency(note: string): number {
 
 function perceptualVolume(value: number): number {
   const normalized = Math.min(100, Math.max(0, value)) / 100;
-  return normalized ** 1.7;
+  return normalized ** 1.5;
 }
+
+/** 单音峰值与整体增益：在保持动态余量的前提下提高手机外放响度。 */
+const NOTE_PEAK = 0.42;
+const OUTPUT_TRIM = 1.25;
+const SFX_BOOST = 1.4;
 
 function createImpulse(context: AudioContext, seconds: number, decay: number): AudioBuffer {
   const length = Math.max(1, Math.floor(context.sampleRate * seconds));
@@ -94,12 +99,19 @@ export class AudioEngine {
     this.convolver = context.createConvolver();
     this.wetGain = context.createGain();
     this.convolver.buffer = createImpulse(context, 1.6, 2.8);
+    const limiter = context.createDynamicsCompressor();
+    limiter.threshold.value = -6;
+    limiter.knee.value = 6;
+    limiter.ratio.value = 12;
+    limiter.attack.value = 0.003;
+    limiter.release.value = 0.25;
     this.musicGain.connect(this.masterGain);
     this.musicGain.connect(this.convolver);
     this.convolver.connect(this.wetGain);
     this.wetGain.connect(this.masterGain);
     this.effectGain.connect(this.masterGain);
-    this.masterGain.connect(context.destination);
+    this.masterGain.connect(limiter);
+    limiter.connect(context.destination);
     this.applyVolumes();
     this.applyReverb();
     return context;
@@ -110,7 +122,7 @@ export class AudioEngine {
       return;
     }
     const now = this.context.currentTime;
-    this.masterGain.gain.setTargetAtTime(perceptualVolume(this.settings.masterVolume), now, 0.02);
+    this.masterGain.gain.setTargetAtTime(perceptualVolume(this.settings.masterVolume) * OUTPUT_TRIM, now, 0.02);
     this.musicGain.gain.setTargetAtTime(perceptualVolume(this.settings.musicVolume), now, 0.02);
     this.effectGain.gain.setTargetAtTime(perceptualVolume(this.settings.effectVolume), now, 0.02);
   }
@@ -134,7 +146,7 @@ export class AudioEngine {
     const frequency = noteFrequency(note);
     const now = context.currentTime;
     const gain = context.createGain();
-    const peak = 0.14 * Math.min(1, Math.max(0.1, velocity));
+    const peak = NOTE_PEAK * Math.min(1, Math.max(0.1, velocity));
     const duration = timbre === "bell" ? 2.4 : timbre === "synth" ? 0.9 : 1.5;
 
     gain.gain.setValueAtTime(0.0001, now);
@@ -237,7 +249,7 @@ export class AudioEngine {
     }
     const source = context.createBufferSource();
     const gain = context.createGain();
-    gain.gain.value = Math.min(1, Math.max(0, volume));
+    gain.gain.value = Math.min(1.5, Math.max(0, volume) * SFX_BOOST);
     source.buffer = buffer;
     source.connect(gain);
     gain.connect(this.effectGain);

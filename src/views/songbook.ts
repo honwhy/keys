@@ -20,7 +20,7 @@ export function songbookView(ctx: AppContext): HTMLElement {
   const head = element("header", "view-head");
   const titleBox = element("div", "view-titlebox");
   titleBox.append(element("p", "eyebrow", "SONG LIBRARY"), element("h1", "", "曲库"));
-  const summary = element("span", "view-summary", "6 首 · 全部开放");
+  const summary = element("span", "view-summary", `${SONGS.length} 首 · 全部开放`);
   head.append(titleBox, summary);
   root.append(head);
 
@@ -30,7 +30,9 @@ export function songbookView(ctx: AppContext): HTMLElement {
 
   const renderGrid = (): void => {
     grid.replaceChildren();
-    const list = current === "全部" ? SONGS : SONGS.filter((song) => song.category === current);
+    const list = (current === "全部" ? SONGS : SONGS.filter((song) => song.category === current))
+      .slice()
+      .sort((a, b) => a.difficulty - b.difficulty);
     if (list.length === 0) {
       grid.append(element("p", "empty-copy", "这个分类还没有曲目。"));
       return;

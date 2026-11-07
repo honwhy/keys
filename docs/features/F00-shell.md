@@ -291,7 +291,7 @@
 
 ## 9. 素材
 
-MVP 素材以 [`design-requirements.md`](../design-requirements.md) 为准：**9 张图**（3 张打底 + 6 张封面）+ **7 个短音效**，15 个音符实时合成。本 Feature 只使用：
+MVP 素材以 [`design-requirements.md`](../design-requirements.md) 为准：**15 张图**（3 张打底 + 12 张封面）+ **7 个短音效**，15 个音符实时合成。本 Feature 只使用：
 
 | 类型 | 素材 | 用途 |
 | --- | --- | --- |
@@ -303,7 +303,7 @@ MVP 素材以 [`design-requirements.md`](../design-requirements.md) 为准：**9
 
 - 图片：首屏 ≤300KB；全部 3 张打底图 ≤500KB。
 - 音频：UI 音效 ≤30KB。
-- 复用：9 张图与 7 个音效由全部 Feature 共用。
+- 复用：15 张图与 7 个音效由全部 Feature 共用。
 
 ## 11. 风险与待确认
 

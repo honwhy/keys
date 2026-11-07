@@ -576,13 +576,73 @@ button {
 }
 
 .piano-key.target {
-  outline: 1.5px solid rgba(53, 224, 208, 0.75);
+  outline: 2px solid rgba(53, 224, 208, 0.95);
   outline-offset: -2px;
-  box-shadow: 0 0 18px rgba(53, 224, 208, 0.35);
+  box-shadow: 0 0 22px rgba(53, 224, 208, 0.7), inset 0 0 16px rgba(53, 224, 208, 0.35);
+}
+
+.white-key.target {
+  background: linear-gradient(180deg, #ffffff 0%, #dcfffb 45%, #9af3ea 100%);
+}
+
+.white-key.target .key-label {
+  color: #045451;
+}
+
+.black-key.target {
+  background: linear-gradient(180deg, #1c6a65 0%, #0f4340 55%, #061b1a 100%);
+  border-color: rgba(53, 224, 208, 0.75);
+}
+
+.black-key.target .key-label {
+  color: #d6fffb;
+}
+
+/* 跟弹示范：当前正在发声的琴键 */
+@keyframes demo-key-flash {
+  0% {
+    filter: brightness(2);
+  }
+  60% {
+    filter: brightness(1.3);
+  }
+  100% {
+    filter: brightness(1.12);
+  }
+}
+
+.piano-key.demo {
+  outline: 2.5px solid #9ffff7;
+  outline-offset: -2px;
+  box-shadow: 0 0 30px rgba(53, 224, 208, 0.95), inset 0 0 22px rgba(53, 224, 208, 0.5);
+  animation: demo-key-flash 0.4s ease-out;
+}
+
+.white-key.demo {
+  background: linear-gradient(180deg, #ffffff 0%, #b6fff7 45%, #45ddd0 100%);
+  transform: translateY(4px);
+}
+
+.black-key.demo {
+  background: linear-gradient(180deg, #2a9d94 0%, #12706a 55%, #052523 100%);
+  border-color: #9ffff7;
+  transform: translateY(3px);
+}
+
+.white-key.demo .key-label {
+  color: #023f3c;
+}
+
+.black-key.demo .key-label {
+  color: #e7fffd;
 }
 
 .piano-key.dimmed {
   opacity: 0.42;
+}
+
+.keyboard-preview.listening .piano-key.dimmed {
+  opacity: 0.3;
 }
 
 .piano-key.focused {
@@ -596,6 +656,10 @@ button {
 .keyboard-preview.disabled {
   opacity: 0.65;
   pointer-events: none;
+}
+
+.keyboard-preview.disabled.listening {
+  opacity: 1;
 }
 
 /* placeholder views */

@@ -252,7 +252,20 @@ export class Keyboard {
 
   highlight(note: string | null): void {
     this.keyElements.forEach((key, current) => {
+      key.classList.remove("demo");
       key.classList.toggle("target", current === note);
+    });
+  }
+
+  highlightDemo(note: string | null): void {
+    this.keyElements.forEach((key, current) => {
+      const active = current === note;
+      if (active && key.classList.contains("demo")) {
+        // 连续两次示范同一个音时，强制重启动画。
+        key.classList.remove("demo");
+        void key.offsetWidth;
+      }
+      key.classList.toggle("demo", active);
     });
   }
 
@@ -264,7 +277,9 @@ export class Keyboard {
   }
 
   clearHighlight(): void {
-    this.keyElements.forEach((key) => key.classList.remove("target"));
+    this.keyElements.forEach((key) => {
+      key.classList.remove("target", "demo");
+    });
   }
 
   setFocus(notes: string[] | null): void {

@@ -48,6 +48,12 @@ const COVER_KEYS: Record<string, string> = {
   birthday: "birthday",
   "jingle-bells": "jingleBells",
   "cde-etude": "cdeEtude",
+  "hot-cross-buns": "hotCrossBuns",
+  "mary-lamb": "maryLamb",
+  "london-bridge": "londonBridge",
+  "oh-susanna": "ohSusanna",
+  "yankee-doodle": "yankeeDoodle",
+  "old-macdonald": "oldMacdonald",
 };
 
 export async function loadManifest(): Promise<AssetManifest> {

@@ -1,7 +1,7 @@
 {
   "project": "KeyTune",
   "version": 1,
-  "updated": "2026-11-02",
+  "updated": "2026-11-07",
   "pathBase": "/",
   "images": {
     "appIcon": {
@@ -91,6 +91,42 @@
         "title": "C-D-E 练习曲",
         "512": "images/covers/cover-cde-etude-512.webp",
         "1024": "images/covers/cover-cde-etude-1024.webp"
+      },
+      "hotCrossBuns": {
+        "id": "M-IMG-10",
+        "title": "热十字面包",
+        "512": "images/covers/cover-hot-cross-buns-512.webp",
+        "1024": "images/covers/cover-hot-cross-buns-1024.webp"
+      },
+      "maryLamb": {
+        "id": "M-IMG-11",
+        "title": "玛丽有只小羊羔",
+        "512": "images/covers/cover-mary-lamb-512.webp",
+        "1024": "images/covers/cover-mary-lamb-1024.webp"
+      },
+      "londonBridge": {
+        "id": "M-IMG-12",
+        "title": "伦敦桥",
+        "512": "images/covers/cover-london-bridge-512.webp",
+        "1024": "images/covers/cover-london-bridge-1024.webp"
+      },
+      "ohSusanna": {
+        "id": "M-IMG-13",
+        "title": "噢！苏珊娜",
+        "512": "images/covers/cover-oh-susanna-512.webp",
+        "1024": "images/covers/cover-oh-susanna-1024.webp"
+      },
+      "yankeeDoodle": {
+        "id": "M-IMG-14",
+        "title": "扬基歌",
+        "512": "images/covers/cover-yankee-doodle-512.webp",
+        "1024": "images/covers/cover-yankee-doodle-1024.webp"
+      },
+      "oldMacdonald": {
+        "id": "M-IMG-15",
+        "title": "老麦克唐纳",
+        "512": "images/covers/cover-old-macdonald-512.webp",
+        "1024": "images/covers/cover-old-macdonald-1024.webp"
       }
     }
   },

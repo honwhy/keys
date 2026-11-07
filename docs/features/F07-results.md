@@ -317,7 +317,7 @@
 
 ## 9. 素材
 
-MVP 素材以 [`design-requirements.md`](../design-requirements.md) 为准：**9 张图**（3 张打底 + 6 张封面）+ **7 个短音效**，15 个音符实时合成。本 Feature 只使用：
+MVP 素材以 [`design-requirements.md`](../design-requirements.md) 为准：**15 张图**（3 张打底 + 12 张封面）+ **7 个短音效**，15 个音符实时合成。本 Feature 只使用：
 
 | 类型 | 素材 | 用途 |
 | --- | --- | --- |

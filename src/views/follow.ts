@@ -143,6 +143,7 @@ export function followView(ctx: AppContext, songId: string): HTMLElement {
     inWait = true;
     firstAttempt = true;
     attempted = false;
+    keyboard.element.classList.remove("listening");
     banner.textContent = "轮到你";
     banner.className = "follow-banner turn";
     target.classList.remove("hidden");
@@ -160,25 +161,30 @@ export function followView(ctx: AppContext, songId: string): HTMLElement {
     ctx.audio.stopAll();
     inWait = false;
     keyboard.setEnabled(false);
+    keyboard.element.classList.add("listening");
     keyboard.clearHighlight();
-    keyboard.setFocus(currentPhrase.flatMap((note) => note.notes));
+    keyboard.setFocus(null);
     banner.textContent = "听一听";
     banner.className = "follow-banner listen";
     target.classList.add("hidden");
     feedback.textContent = "";
     currentPhrase.forEach((note, index) => {
+      const played = note.notes[0] ?? "C4";
       timers.push(
         window.setTimeout(() => {
-          keyboard.highlight(note.notes[0] ?? null);
-          ctx.audio.playNote(note.notes[0] ?? "C4");
+          keyboard.setFocus([played]);
+          keyboard.highlightDemo(played);
+          ctx.audio.playNote(played);
           const release = window.setTimeout(() => {
-            ctx.audio.releaseNote(note.notes[0] ?? "C4");
+            ctx.audio.releaseNote(played);
           }, Math.min(420, note.duration));
           timers.push(release);
           if (index === currentPhrase.length - 1) {
             const wait = window.setTimeout(() => {
               ctx.audio.stopAll();
+              keyboard.element.classList.remove("listening");
               keyboard.clearHighlight();
+              keyboard.setFocus(null);
               targetIndex = 0;
               showTarget();
             }, Math.min(520, note.duration) + 260);
@@ -260,6 +266,7 @@ export function followView(ctx: AppContext, songId: string): HTMLElement {
     finished = true;
     inWait = false;
     keyboard.setEnabled(false);
+    keyboard.element.classList.remove("listening");
     keyboard.clearHighlight();
     ctx.audio.stopAll();
     const summary = makeSummary(total, correctFirst, maxCombo);
